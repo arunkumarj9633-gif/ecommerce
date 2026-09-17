@@ -26,6 +26,12 @@ SECRET_KEY = 'django-insecure--9i39_#az0-f7^dw(l)!u-v4mkogpn4mjnxl9$9^88lw@c0(!j
 DEBUG = True
 
 ALLOWED_HOSTS = []
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
 
 AUTH_USER_MODEL = 'users.User'
 # Application definition
