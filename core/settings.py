@@ -63,14 +63,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 CORS_ALLOW_ALL_ORGINS = True 
+
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES':
-    (
+    # Global authentication classes
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),'DEFAULT_PERMISSION-CLASSES':
-    (
-        'rest_framework.permissions.AllowAny'
-    ),
+    ],
+    
+    # Global permission classes
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',  # Restricts access to logged-in users by default
+    ],
 }
 
 ROOT_URLCONF = 'core.urls'
