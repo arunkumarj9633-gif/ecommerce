@@ -38,6 +38,7 @@ class RegisterView(APIView):
 
 # Login API
 class LoginView(APIView):
+    permission_classes=[AllowAny]
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
 
@@ -55,4 +56,12 @@ class LoginView(APIView):
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# Create your views here.
+# Test api
+from rest_framework.permissions import IsAuthenticated
+from .permissions import IsAdmin, IsCustomer, IsMerchant
+
+class TestProtectedView(APIView):
+    permission_classes =[IsAuthenticated]
+
+    def get(self, request):
+        return Response({ "message": "You are Authenticated" })
