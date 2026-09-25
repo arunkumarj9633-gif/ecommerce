@@ -66,15 +66,20 @@ CORS_ALLOW_ALL_ORGINS = True
 
 REST_FRAMEWORK = {
     # Global authentication classes
-    'DEFAULT_AUTHENTICATION_CLASSES': [
+    'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ],
+    ),
     
     # Global permission classes
-    'DEFAULT_PERMISSION_CLASSES': [
+    'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',  # Restricts access to logged-in users by default
-    ],
+    ),
 }
+REST_FRAMEWORK.update({
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5
+}
+)
 
 ROOT_URLCONF = 'core.urls'
 

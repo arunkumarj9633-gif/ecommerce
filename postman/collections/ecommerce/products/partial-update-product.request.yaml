@@ -1,0 +1,16 @@
+$kind: http-request
+name: Partial Update Product
+url: 'http://127.0.0.1:8000/api/users/products/{{product_id}}/'
+method: PATCH
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Accept
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "price": 19.99
+    }

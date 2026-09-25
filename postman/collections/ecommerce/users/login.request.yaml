@@ -1,4 +1,15 @@
 $kind: http-request
-url: ""
+url: http://127.0.0.1:8000/api/users/register/
 method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"username\" : \"merchant3\",\r
+
+    \    \"password\" : \"123\",\r
+
+    \    \"role\" : \"merchant\"\r
+
+    }"
 order: 1789965337374

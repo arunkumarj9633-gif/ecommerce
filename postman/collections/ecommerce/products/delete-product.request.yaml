@@ -1,0 +1,8 @@
+$kind: http-request
+name: Delete Product
+url: 'http://127.0.0.1:8000/api/users/products/{{product_id}}/'
+method: DELETE
+order: 5000
+headers:
+  - key: Accept
+    value: application/json
