@@ -1,0 +1,17 @@
+$kind: http-request
+name: Update Cart Items
+url: http://127.0.0.1:8000/api/cart/{id}/
+method: POST
+order: 3000
+headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer {{json_web_token_0z2k}}
+pathVariables:
+  id: "1"
+body:
+  type: json
+  content: |-
+    {
+      "quantity": 2
+    }

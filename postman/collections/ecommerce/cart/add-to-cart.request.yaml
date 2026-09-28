@@ -1,0 +1,19 @@
+$kind: http-request
+name: Add to Cart
+url: 'http://127.0.0.1:8000/api/cart/'
+method: POST
+order: 2000
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Accept
+    value: application/json
+  - key: Authorization
+    value: 'Bearer {{json_web_token_0z2k}}'
+body:
+  type: json
+  content: |-
+    {
+      "product_id": 1,
+      "quantity": 1
+    }

@@ -1,0 +1,12 @@
+$kind: http-request
+name: Remove from Cart
+url: http://127.0.0.1:8000/api/cart/remove/
+method: POST
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_11g0}}"
+order: 4000
+headers:
+  Accept: application/json
+  Authorization: Bearer {{json_web_token_0z2k}}

@@ -1,0 +1,10 @@
+$kind: http-request
+name: List Cart
+url: 'http://127.0.0.1:8000/api/cart/'
+method: GET
+order: 1000
+headers:
+  - key: Accept
+    value: application/json
+  - key: Authorization
+    value: 'Bearer {{json_web_token_0z2k}}'
